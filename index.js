@@ -148,7 +148,8 @@ function version(program, projectPath) {
 	var appPkg;
 
 	try {
-		resolveFrom(projPath, "react-native");
+                // allow to work without installing node_modules
+		// resolveFrom(projPath, "react-native");
 		appPkg = require(path.join(projPath, "package.json"));
 	} catch (err) {
 		if (err.message === "Cannot find module 'react-native'") {
